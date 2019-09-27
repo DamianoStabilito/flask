@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ author }}'s app</title>
+    <meta name="theme-color" content="#34A5DA">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+    <link rel="manifest" href="static/manifest.json">
+  </head>
+
+  <body>
+    <h1 class="h3 mb-3 font-weight-normal">Hello {{author}}</h1>
+
+  <form  action="/home" method="post">
+  <p><button type="submit" name="submit" value="Turn On room1"  class="btn btn-primary btn-md">Turn On room1</button>    </p> 
+  <p><button type="submit" name="submit" value="Turn Off room1"  class="btn btn-primary btn-md">Turn Off room1</button>    </p> 
+  <p><button type="submit" name="submit" value="Turn On room2"  class="btn btn-primary btn-md">Turn On room2</button>    </p> 
+  <p><button type="submit" name="submit" value="Turn Off room2"  class="btn btn-primary btn-md">Turn Off room2</button>    </p> 
+  <p><button type="submit" name="submit" value="Turn On room3"  class="btn btn-primary btn-md">Turn On room3</button>    </p> 
+  <p><button type="submit" name="submit" value="Turn Off room3"  class="btn btn-primary btn-md">Turn Off room3</button>    </p> 
+  <p><button type="submit" name="submit" value="logout"  class="btn btn-primary btn-md">Logout</button>    </p> 
+  </form>
+  </body>
+  <script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+</html>

@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+
+{
+  "name": "Arduino_APP",
+  "short_name": "A_APP",
+  "description": "A progressive webapp template built with Flask",
+  "theme_color": "transparent",
+  "background_color": "transparent",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons",
+      "sizes": "72x72",
+      "type": "image/png"
+    }
+    ]
+}

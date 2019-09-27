@@ -1,0 +1,40 @@
+<html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#34A5DA"> 
+     <link rel="manifest" href="static/manifest.json">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+      <title>{{ author }}'s app</title>
+  </head>
+
+  <body>
+   <h1 class="h3 mb-3 font-weight-normal">Hello {{author}}</h1>
+
+   <form action="/tester" method="post">
+    <p><button type="submit" name="submit" value="Start"  class="btn btn-primary btn-md">Start</button>    </p> 
+    <p><button type="submit" name="submit" value="logout"  class="btn btn-primary btn-md">Logout</button>    </p> 
+  </form>
+  {%with messages = get_flashed_messages()%}
+      {%if messages%}
+         {%for messages in messages %}
+         <h1 class="h3 mb-3 font-weight-normal">{{messages}}</h1>
+         {%endfor%}
+      {%endif%}
+   {%endwith%}
+   </body>
+   <script type="text/javascript">
+      if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw.js').then(function(registration) {
+        // Registration was successful
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, function(err) {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
+</html>
