@@ -1,2 +1,2 @@
 UI.addConfirmBox( `htmlString`, callbackFunction);
-console.log("DAMAN");
+console.log('hello world');
